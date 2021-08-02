@@ -14,7 +14,27 @@ public class Item {
 	public String toString() {
 		
 		// Write your codes here
-		return null;
+		String output = "";
+
+
+			output = String.format("%-10s %-30s %-10s %-10s", 
+					assetTag,
+					description, 
+					ResourceCentre.showAvailability(isAvailable),
+					dueDate);
+		
+		return output;
+	}
+	
+	public static String showAvailability(boolean isAvailable) {
+		String avail;
+
+		if (isAvailable == true) {
+			avail = "Yes";
+		} else {
+			avail = "No";
+		}
+		return avail;
 	}
 	public String getAssetTag() {
 		return assetTag;
